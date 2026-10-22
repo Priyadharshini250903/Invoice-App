@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;                                
+}
+
+body {
+    background-color: #f8fafc;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.invoice-box {
+    background-color: #ffffff;
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.invoice-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #0f172a;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.company-logo-placeholder {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 8px;
+}
+
+.form-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.item-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.main-desc { flex: 3; }
+.small { flex: 1; }
+
+.action-cell {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 6px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+input {
+    padding: 11px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    width: 100%;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    outline: none;
+}
+
+.pdf-temp-text {
+    font-size: 14px;
+    color: #1e293b;
+    padding: 6px 0;
+    display: inline-block;
+    word-break: break-word;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s;
+}
+
+.btn-text:hover { color: #1d4ed8; }
+
+.delete-row-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.delete-row-btn:hover {
+    background-color: #fee2e2;
+}
+
+.totals-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.totals-row {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.total-val {
+    font-weight: 600;
+    color: #1e293b;
+    text-align: right;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    width: 260px;
+    margin: 4px 0;
+}
+
+.grand-total-row {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.grand-total-row .total-val {
+    color: #2563eb;
+    font-weight: 800;
+}
+
+.action-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+    transition: all 0.2s;
+}
+
+.success {
+    background-color: #10b981;
+    color: white;
+}
+
+.success:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+/* --- PRINT RULES: Clean presentation settings for PDF saving --- */
+@media print {
+    body {
+        background-color: #ffffff;
+        padding: 0;
+    }
+    .container {
+        max-width: 100%;
+    }
+    .invoice-box {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    /* Hides the action buttons and trash tools cleanly from the sheet file */
+    .action-button, #add-item-btn, .action-cell, .pdf-hide {
+        display: none !important;
+    }
+    input {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 5px 0 !important;
+    }
+}
+
+
