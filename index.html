@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoiz - Smart Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome icons link -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body> 
+    <div class="container">
+        <!-- Everything inside #invoice-card gets cleanly captured into your final document layout -->
+        <div id="invoice-card" class="invoice-box"> 
+            <div class="invoice-header">
+                <div>
+                    <h1>INVOICE</h1>
+                    <p class="subtitle">Generated via Invoiz App</p>
+                </div>
+                <div class="company-logo-placeholder">
+                    <i class="fa-solid fa-file-invoice-dollar logo-icon"></i>
+                    <span>INVOIZ</span>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Client Details</h3>
+                <div class="input-group">
+                    <label for="client-name">Client Name</label>
+                    <input type="text" id="client-name" placeholder="e.g., Acme Corp">
+                </div>
+                <div class="input-group">
+                    <label for="invoice-date">Invoice Date</label>
+                    <input type="date" id="invoice-date">
+                </div>    
+            </div>
+
+            <div class="form-section">
+                <div class="section-header">
+                    <h3>Line Items</h3>
+                    <button id="add-item-btn" class="btn-text"><i class="fa-solid fa-plus"></i> Add Line Item</button>
+                </div>
+                
+                <!-- This container acts as the dynamic landing zone for invoice rows -->
+                <div id="items-container">
+                    <div class="item-row">
+                        <div class="input-group main-desc">
+                            <label class="pdf-hide">Description of Work</label>
+                            <input type="text" class="item-desc" placeholder="e.g., Website Development">
+                        </div>
+                        <div class="input-group small">
+                            <label class="pdf-hide">Price ($)</label>
+                            <input type="number" class="item-price" placeholder="0.00" min="0" step="0.01">
+                        </div>
+                        <div class="input-group small">
+                            <label class="pdf-hide">Qty</label>
+                            <input type="number" class="item-qty" placeholder="1" value="1" min="1">
+                        </div>
+                        <div class="action-cell">
+                            <button class="delete-row-btn pdf-hide" title="Remove Item"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+
+            <div class="totals-section">
+                <div class="totals-row">
+                    <span class="total-label">Subtotal:</span>
+                    <span id="display-subtotal" class="total-val">$0.00</span>
+                </div>
+                <div class="totals-row">
+                    <span class="total-label">Tax (18% GST):</span>
+                    <span id="display-tax" class="total-val">$0.00</span>
+                </div>
+                <hr>
+                <div class="totals-row grand-total-row">
+                    <span class="total-label">Grand Total:</span>
+                    <span id="display-total" class="total-val">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-button">
+            <button id="pdf-btn" class="btn success"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+        </div>    
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
+                      
