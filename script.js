@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const itemsContainer = document.getElementById('items-container');
     const addItemBtn = document.getElementById('add-item-btn');
@@ -68,4 +69,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-                            
